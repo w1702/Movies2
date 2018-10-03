@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.KioskController"
+      alignment="center" spacing="10"
+      styleClass="root"
+      prefWidth="800.0">
+
+    <HBox>
+        <ImageView>
+            <image><Image url="@movie_icon.png"/></image>
+        </ImageView>
+        <Label styleClass="h1" text="${'\nMovie Kiosk'}"/>
+    </HBox>
+    
+    <HBox alignment="center_right">
+        <Button onAction="#handleAdmin" text="Administration"/>
+    </HBox>
+    
+    <GridPane hgap="10">
+        <Button onAction="#handleCatalogue" styleClass="largeButton" text="Explore Catalogue" GridPane.columnIndex="0" GridPane.rowIndex="0" wrapText="true"/>
+        <Button onAction="#handleCustomerRecord" styleClass="largeButton" text="Customer Record" GridPane.columnIndex="1" GridPane.rowIndex="0" wrapText="true"/>
+        <Button onAction="#handleTopUp" styleClass="largeButton" text="Top-up Account" GridPane.columnIndex="2" GridPane.rowIndex="0" wrapText="true"/>
+        <Button onAction="#handleFavourites" styleClass="largeButton" text="Favourite Movies" GridPane.columnIndex="3" GridPane.rowIndex="0" wrapText="true"/>
+    </GridPane>
+    
+    <HBox alignment="center">
+        <Button onAction="#handleQuit" text="Quit"/>
+    </HBox>
+
+    <stylesheets>
+        <URL value="@kiosk.css"/>
+    </stylesheets>
+</VBox>

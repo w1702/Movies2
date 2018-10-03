@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.AdminController"
+      alignment="center" spacing="10"
+      styleClass="root"
+      prefWidth="800.0">
+    <HBox>
+        <ImageView>
+            <image><Image url="@movie_icon.png"/></image>
+        </ImageView>
+        <Label styleClass="h1" text="${'\nAdministration Menu'}"/>
+    </HBox>
+    
+    <GridPane alignment="center" vgap="10" hgap="10">
+        <Label styleClass="h2" text="Manage Customers:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <Label styleClass="h2" text="Manage Movies:" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        
+        <Button onAction="#handleViewCustomers" styleClass="menuButton" text="View All" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <Button onAction="#handleViewMovies" styleClass="menuButton" text="View All" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        
+        <Button onAction="#handleAddCustomer" styleClass="menuButton" text="Add" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <Button onAction="#handleAddMovie" styleClass="menuButton" text="Add" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        
+        <Button onAction="#handleRemoveCustomer" styleClass="menuButton" text="Remove" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <Button onAction="#handleRemoveMovie" styleClass="menuButton" text="Remove" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    </GridPane>
+  
+    <HBox alignment="center">
+        <Button onAction="#handleExit" text="Exit"/>
+    </HBox>
+    
+    <stylesheets>
+        <URL value="@kiosk.css"/>
+    </stylesheets>
+</VBox>

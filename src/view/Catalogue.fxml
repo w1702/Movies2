@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.CatalogueController"
+      alignment="center" spacing="10"
+      styleClass="root"
+      prefWidth="800.0"
+>
+    
+    <HBox>
+        <ImageView>
+            <image><Image url="@movie_icon.png"/></image>
+        </ImageView>
+        <Label styleClass="h1" text="${'\nCatalogue'}"/>
+    </HBox>
+    
+    <GridPane hgap="10" vgap="10">
+        
+        <VBox GridPane.columnIndex="0" GridPane.rowIndex="0" spacing="10">
+            <Label styleClass="h2" text="View Movies:"/>
+            <Button onAction="#handleAllMovies" styleClass="menuButton" text="All Movies"/>
+            <Button onAction="#handleAvailableMovies" styleClass="menuButton" text="Available Movies"/>
+            <Button onAction="#handleMoviesByGenre" styleClass="menuButton" text="Movies By Genre"/>
+            <Button onAction="#handleMoviesByYear" styleClass="menuButton" text="Movies By Year"/>
+        </VBox>
+        
+        <Button onAction="#handleRentMovie" styleClass="largeButton" text="Rent a Movie" GridPane.columnIndex="1" GridPane.rowIndex="0" wrapText="true"/>
+        
+        <Button onAction="#handleReturnMovie" styleClass="largeButton" text="Return a Movie" GridPane.columnIndex="2" GridPane.rowIndex="0" wrapText="true"/>
+    </GridPane>
+    
+    <HBox alignment="center">
+        <Button onAction="#handleExit" text="Exit"/>
+    </HBox>
+    
+    <stylesheets>
+        <URL value="@kiosk.css"/>
+    </stylesheets>
+</VBox>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.FavouriteMoviesController"
+      alignment="center" spacing="10"
+      styleClass="root"
+      prefWidth="800.0"
+>
+    <HBox>
+        <ImageView>
+            <image><Image url="@movie_icon.png"/></image>
+        </ImageView>
+        <Label styleClass="h1" text="${'\nFavourite Movies'}"/>
+    </HBox>
+    
+    <HBox alignment="center" spacing="10">
+        <Text text="Customer ID:" />
+        <TextField fx:id="idTf" />
+        <Button onAction="#handleSelectCustomer" text="Select Customer" fx:id="selectCustomerBtn" disable="true"/>
+    </HBox>
+    <HBox alignment="center">
+        <Text fx:id="statusTxt"/>
+    </HBox>
+    
+    <HBox alignment="center">
+        <Label styleClass="h2" text="Favourite Movies"/>
+    </HBox>
+    <TableView fx:id="moviesTv" prefHeight="150">
+        <placeholder>
+            <Label text="No results found."/>
+        </placeholder>
+	<columns>
+            <TableColumn text="Title" prefWidth="200">
+		<cellValueFactory><PropertyValueFactory property="title"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Year">
+		<cellValueFactory><PropertyValueFactory property="year"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Genre">
+                <cellValueFactory><PropertyValueFactory property="genre"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Price">
+                <cellValueFactory><PropertyValueFactory property="price"/></cellValueFactory>
+            </TableColumn>
+	</columns>
+    </TableView>
+    
+    <HBox alignment="center">
+        <Button onAction="#handleClose" text="Close" />
+    </HBox>
+    <stylesheets>
+        <URL value="@kiosk.css"/>
+    </stylesheets>
+</VBox>
